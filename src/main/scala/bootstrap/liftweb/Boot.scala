@@ -10,10 +10,6 @@ import sitemap._
 import Loc._
 import net.liftmodules.JQueryModule
 import net.liftweb.http.js.jquery._
-import net.liftmodules.ng.Angular
-import java.util.ResourceBundle
-import java.util
-import net.liftweb.util
 
 
 /**
@@ -23,12 +19,16 @@ import net.liftweb.util
 class Boot {
   def boot {
     // where to search snippet
-    LiftRules.addToPackages("com.joescii")
+    LiftRules.addToPackages("com.joescii.demo")
 
     // Build SiteMap
     val entries = List(
-      Menu.i("Home") / "index"
-    )
+      Menu.i("Home") / "index", // the simple way to declare a menu
+
+      // more complex because this menu allows anything in the
+      // /static path to be visible
+      Menu(Loc("Static", Link(List("static"), true, "/static/index"), 
+	       "Static Content")))
 
     // set the sitemap.  Note if you don't want access control for
     // each page, just comment this line out.
@@ -54,18 +54,7 @@ class Boot {
     JQueryModule.InitParam.JQuery=JQueryModule.JQuery172
     JQueryModule.init()
 
-//    LiftRules.resourceNames =
-//      "testBundle" ::
-//      "nonEnglish" ::
-//      LiftRules.resourceNames
-
-    angular()
-  }
-
-  def angular() = {
-    import net.liftmodules.ng._
-
-    AngularJS.init()
-    Angular.init(futures = false, appSelector = ".application")
+    net.liftmodules.ng.AngularJS.init()
+    net.liftmodules.ng.Angular.init()
   }
 }

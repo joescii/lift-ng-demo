@@ -1,5 +1,8 @@
-.idea/
-project/project/
-project/target/
 target/
-console.devmode.log
+boot/
+lib_managed/
+src_managed/
+project/plugins/project/
+project/target
+project/project
+.idea/

@@ -181,25 +181,16 @@
 
   <div id="angular-overview" class="step" data-x="-1075" data-z="300" data-y="-550" data-rotate-x="-25">
     <ul>
-      <li>
-        OSS MVC JS framework
-      </li>
-      <li>
-        Declarative DOM manipulation
-      </li>
-      <li>
-        Test-first
-      </li>
-      <li>
-        Lots of powerful magic
-      </li>
-
+      <li>OSS MVC JS framework</li>
+      <li>Declarative DOM manipulation</li>
+      <li>Test-first</li>
+      <li>Lots of powerful magic</li>
     </ul>
   </div>
 
   <div id="ng-iceberg" class="step slide app" data-x="500" data-z="300" data-y="-550">
     <div ng-controller="Iceberg">
-      <h1>Tip of the Iceberg</h1>
+      <h1>Tip of the Angular Iceberg</h1>
       <!-- Can bind variables without any JavaScript -->
       <input type="text" ng-model="theInput">
       <div>Input: {{theInput}}</div>
@@ -217,6 +208,33 @@
       <div>Clock: {{theClock}}</div>
 
     </div>
+  </div>
+
+  <div id="lift-overview" class="step" data-x="-3000" data-z="300" data-y="-550" data-rotate-x="-25">
+    <ul>
+      <li>View-first web framework</li>
+      <li>Pure HTML templates</li>
+      <li>Scala's oldest web framework</li>
+    </ul>
+  </div>
+
+  <div id="lift-iceberg" class="slide step app" data-x="-4500" data-z="300" data-y="-550">
+    <h1>Tip of the Lift Iceberg</h1>
+
+    <!-- Can bind values from the server -->
+    <div data-lift="Clock.time">The time</div>
+
+    <div class="pad"></div>
+
+    <!-- Can handle user events -->
+    <button data-lift="Clock.getTime">Get Time</button>
+    <div>Current Time: <span id="lift-time">the time</span></div>
+
+    <div class="pad"></div>
+    <!-- Can receive events -->
+    <button data-lift="Clock.start">Start Clock</button>
+    <div data-lift="comet?type=ClockComet"></div>
+    <div>Clock: <span id="lift-clock">current time</span></div>
   </div>
 
   <!--

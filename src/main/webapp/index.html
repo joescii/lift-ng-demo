@@ -255,6 +255,51 @@
     </ul>
   </div>
 
+  <div id="power-of-lift" class="step" data-x="-4500" data-z="1300" data-y="-1250">
+    Can we harness the power of Lift...
+    <ul>
+      <li>Security</li>
+      <li>Pure HTML templates</li>
+      <li>World-class async support</li>
+    </ul>
+  </div>
+
+  <div id="cleanliness-of-ng" class="step" data-x="500" data-z="1300" data-y="-1250">
+    With the cleanliness of Angular...
+    <ul>
+      <li>Declarative binding</li>
+      <li>Test-driven development</li>
+    </ul>
+  </div>
+
+  <div id="of-course" class="step" data-x="-2000" data-y="-750" data-z="2000">
+    <div>Of course!</div>
+    <i>What do you think lift-ng is??</i>
+  </div>
+
+  <div id="lift-ng-time" class="step app slide" data-x="-2000" data-y="-750" data-z="3500" ng-controller="LiftNgTime">
+    <h1>Tip of the lift-ng Iceburg</h1>
+
+    <div data-lift="comet?type=LiftNgClock"></div>
+
+    <!-- When do you want to get the time? -->
+    <!-- Client or server? -->
+    <div data-lift="Clock.time">The time</div>
+
+    <div class="pad"></div>
+
+    <!-- Can handle user events -->
+    <button ng-click="getTime()">Get Time</button>
+    <div>Time: {{theTime}}</div>
+
+    <div class="pad"></div>
+
+    <!-- Can receive events -->
+    <button ng-click="startClock()">Start Clock</button>
+    <div>Clock: {{theClock}}</div>
+
+
+  </div>
   <!--
 
       Here is where interesting thing start to happen.
@@ -452,7 +497,7 @@
     <!--document.querySelector(".hint").innerHTML = "<p>Tap on the left or right to navigate</p>";-->
 <!--}-->
 <!--</script>-->
-
+</div>
 <!--
     
     Last, but not least.
@@ -470,6 +515,8 @@
 -->
 <script id="jquery" src="/classpath/jquery.js" type="text/javascript"></script>
 <script data-lift="AngularJS"></script>
+<script data-lift="Angular"></script>
+<script data-lift="LiftNgClock"></script>
 <script src="js/demo.js"></script>
 <script src="js/impress.js"></script>
 <script>impress().init();</script>

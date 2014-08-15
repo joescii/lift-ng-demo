@@ -12,6 +12,8 @@ factory('ClockService', ['$timeout', '$rootScope', function($timeout, $rootScope
 }]).
 
 controller('Iceberg', ['$scope', '$rootScope', 'ClockService', function($scope, $rootScope, clock) {
+  $scope.timeAtLoad = (new Date()).toTimeString();
+
   $scope.getTime = function() {
     $scope.theTime = clock.time();
   };

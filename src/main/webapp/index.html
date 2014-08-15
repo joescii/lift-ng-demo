@@ -200,6 +200,12 @@
   <div id="ng-iceberg" class="step slide app" data-x="500" data-z="300" data-y="-550">
     <div ng-controller="Iceberg">
       <h1>Tip of the Iceberg</h1>
+      <!-- Can bind variables without any JavaScript -->
+      <input type="text" ng-model="theInput">
+      <div>Input: {{theInput}}</div>
+
+      <div class="pad"></div>
+
       <!-- Can handle user events -->
       <button ng-click="getTime()">Get Time</button>
       <div>Time: {{theTime}}</div>
@@ -207,14 +213,8 @@
       <div class="pad"></div>
 
       <!-- Can receive events -->
-      <button ng-click="startCounter()">Start Counter</button>
-      <div>Count: {{theCount}}</div>
-
-      <div class="pad"></div>
-
-      <!-- Can bind variables without any JavaScript -->
-      <input type="text" ng-model="theInput">
-      <div>Input: {{theInput}}</div>
+      <button ng-click="startClock()">Start Clock</button>
+      <div>Clock: {{theClock}}</div>
 
     </div>
   </div>

@@ -1,31 +1,24 @@
 angular.module('DemoApp', []).
 
-factory('TimeService', function() {
-  return {
-    time: function(){ return (new Date()).toTimeString(); }
-  }
-}).
-
-factory('CounterService', ['$timeout', '$rootScope', function($timeout, $rootScope) {
-  count = 0;
-  increment = function() {
-    $rootScope.$emit('count', count);
-    count++;
-    $timeout(function() { increment() }, 1000);
+factory('ClockService', ['$timeout', '$rootScope', function($timeout, $rootScope) {
+  next = function() {
+    $rootScope.$emit('tick', (new Date()).toTimeString());
+    $timeout(function() { next() }, 1000);
   };
   return {
-    start: function() { increment(); }
+    start: function() { next(); },
+    time: function(){ return (new Date()).toTimeString(); }
   };
 }]).
 
-controller('Iceberg', ['$scope', '$rootScope', 'TimeService', 'CounterService', function($scope, $rootScope, timeSvc, countSvc) {
+controller('Iceberg', ['$scope', '$rootScope', 'ClockService', function($scope, $rootScope, clock) {
   $scope.getTime = function() {
-    $scope.theTime = timeSvc.time();
+    $scope.theTime = clock.time();
   };
 
-  $rootScope.$on('count', function(e, count) {
-    $scope.theCount = count;
+  $rootScope.$on('tick', function(e, time) {
+    $scope.theClock = time;
   });
 
-  $scope.startCounter = countSvc.start;
+  $scope.startClock = clock.start;
 }]);

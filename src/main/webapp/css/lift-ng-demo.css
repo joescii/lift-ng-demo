@@ -781,3 +781,26 @@ a:focus {
   height: 93px;
 }
 
+input[type="text"] {
+  width: 100%;
+  height: 50px;
+  font-size: larger;
+  margin: 7px;
+}
+
+button {
+  height: 50px;
+  font-size: larger;
+  margin: 7px;
+}
+
+.app h1 {
+  font-weight: bold;
+  font-size: 40px;
+  text-align: center;
+  margin: 10px;
+}
+
+div.pad {
+  height: 50px;
+}

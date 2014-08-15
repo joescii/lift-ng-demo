@@ -58,7 +58,7 @@ body {
     line-height: 1;
 }
 ol, ul {
-    list-style: none;
+    /*list-style: none;*/
 }
 blockquote, q {
     quotes: none;
@@ -178,6 +178,10 @@ a:focus {
     font-family: 'PT Serif', georgia, serif;
     font-size: 48px;
     line-height: 1.5;
+}
+
+.step ol, ul {
+  font-size: 36px;
 }
 
 .visible {

@@ -190,22 +190,7 @@
   </div>
 
   <div id="lift-iceberg" class="slide step app" data-x="-4500" data-z="300" data-y="-550">
-    <h1>Tip of the Lift Iceberg</h1>
-
-    <!-- Can bind values from the server -->
-    <div data-lift="Clock.time">The time</div>
-
-    <div class="pad"></div>
-
-    <!-- Can handle user events -->
-    <button data-lift="Clock.getTime">Get Time</button>
-    <div>Current Time: <span id="lift-time">the time</span></div>
-
-    <div class="pad"></div>
-    <!-- Can receive events -->
-    <button data-lift="Clock.start">Start Clock</button>
-    <div data-lift="comet?type=ClockComet"></div>
-    <div>Clock: <span id="lift-clock">current time</span></div>
+    <div data-lift="embed?what=/templates-hidden/lift-iceberg"></div>
   </div>
 
   <div id="lift-cool-but" class="step" data-x="-4500" data-z="300" data-y="-550" data-rotate-x="90">
@@ -227,24 +212,7 @@
   </div>
 
   <div id="ng-iceberg" class="step slide app" data-x="500" data-z="300" data-y="-550">
-    <div ng-controller="Iceberg">
-      <h1>Tip of the Angular Iceberg</h1>
-      <!-- Can bind values from JavaScript -->
-      <div>{{timeAtLoad}}</div>
-
-      <div class="pad"></div>
-
-      <!-- Can handle user events -->
-      <button ng-click="getTime()">Get Time</button>
-      <div>Time: {{theTime}}</div>
-
-      <div class="pad"></div>
-
-      <!-- Can receive events -->
-      <button ng-click="startClock()">Start Clock</button>
-      <div>Clock: {{theClock}}</div>
-
-    </div>
+    <div data-lift="embed?what=/templates-hidden/ng-iceberg"></div>
   </div>
 
   <div id="ng-cool-but" class="step" data-x="500" data-z="300" data-y="-550" data-rotate-x="90">
@@ -277,27 +245,8 @@
     <i>What do you think lift-ng is??</i>
   </div>
 
-  <div id="lift-ng-clock" class="step app slide" data-x="-2000" data-y="-750" data-z="3500" ng-controller="LiftNgTime">
-    <h1>Tip of the lift-ng Iceburg</h1>
-
-    <!--<div data-lift="comet?type=LiftNgClock"></div>-->
-    <div data-lift="Angular.bind?type=ClockBinder"></div>
-
-    <!-- When do you want to get the time? -->
-    <!-- Client or server? -->
-    <div data-lift="Clock.time">The time</div>
-
-    <div class="pad"></div>
-
-    <!-- Can handle user events -->
-    <button ng-click="getTime()">Get Time</button>
-    <div>Time: {{theTime}}</div>
-
-    <div class="pad"></div>
-
-    <!-- Can receive events -->
-    <button ng-click="startClock()">Start Clock</button>
-    <div>Clock: {{theClock.time}}</div>
+  <div id="lift-ng-clock" class="step app slide" data-x="-2000" data-y="-750" data-z="3500">
+    <div data-lift="embed?what=/templates-hidden/lift-ng-iceberg"></div>
   </div>
 
 

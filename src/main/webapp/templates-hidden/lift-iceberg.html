@@ -1,0 +1,18 @@
+<div>
+  <h1>Tip of the Lift Iceberg</h1>
+
+  <!-- Can bind values from the server -->
+  <div data-lift="Clock.time">The time</div>
+
+  <div class="pad"></div>
+
+  <!-- Can handle user events -->
+  <button data-lift="Clock.getTime">Get Time</button>
+  <div>Current Time: <span id="lift-time">the time</span></div>
+
+  <div class="pad"></div>
+  <!-- Can receive events -->
+  <button data-lift="Clock.start">Start Clock</button>
+  <div data-lift="comet?type=ClockComet"></div>
+  <div>Clock: <span id="lift-clock">current time</span></div>
+</div>

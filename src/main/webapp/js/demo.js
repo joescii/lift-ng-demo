@@ -18,11 +18,11 @@ angular.module('DemoApp', ['LiftNgClock'])
     $scope.theTime = clock.time();
   };
 
+  $scope.startClock = clock.start;
+
   $rootScope.$on('tick', function(e, time) {
     $scope.theClock = time;
   });
-
-  $scope.startClock = clock.start;
 }])
 
 .controller('LiftNgTime', ['$scope', 'LiftNgClockService', function($scope, clock) {

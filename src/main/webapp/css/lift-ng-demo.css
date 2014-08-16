@@ -813,6 +813,7 @@ button {
   font-size: 40px;
   text-align: center;
   margin: 10px;
+  margin-bottom: 40px;
 }
 
 div.pad {
@@ -828,18 +829,18 @@ button {
   background:-moz-linear-gradient( center top, #f24537 5%, #c62d1f 100% );
   filter:progid:DXImageTransform.Microsoft.gradient(startColorstr='#f24537', endColorstr='#c62d1f');
   background-color:#f24537;
-  -webkit-border-top-left-radius:47px;
-  -moz-border-radius-topleft:47px;
-  border-top-left-radius:47px;
-  -webkit-border-top-right-radius:0px;
-  -moz-border-radius-topright:0px;
-  border-top-right-radius:0px;
-  -webkit-border-bottom-right-radius:47px;
-  -moz-border-radius-bottomright:47px;
-  border-bottom-right-radius:47px;
-  -webkit-border-bottom-left-radius:0px;
-  -moz-border-radius-bottomleft:0px;
-  border-bottom-left-radius:0px;
+  -webkit-border-top-left-radius:3px;
+  -moz-border-radius-topleft:3px;
+  border-top-left-radius:3px;
+  -webkit-border-top-right-radius:3px;
+  -moz-border-radius-topright:3px;
+  border-top-right-radius:3px;
+  -webkit-border-bottom-right-radius:3px;
+  -moz-border-radius-bottomright:3px;
+  border-bottom-right-radius:3px;
+  -webkit-border-bottom-left-radius:3px;
+  -moz-border-radius-bottomleft:3px;
+  border-bottom-left-radius:3px;
   text-indent:0;
   border:1px solid #d02718;
   display:inline-block;

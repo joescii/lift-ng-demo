@@ -1,4 +1,4 @@
-angular.module('DemoApp', ['LiftNgClock'])
+angular.module('DemoApp', ['LiftNgClock', 'ChatServices'])
 
 .factory('ClockService', ['$timeout', '$rootScope', function($timeout, $rootScope) {
   next = function() {
@@ -37,5 +37,14 @@ angular.module('DemoApp', ['LiftNgClock'])
   $scope.$on('lift-ng-tick', function(e, time) {
     $scope.theClock = time;
   });
+}])
+
+.controller('ChatController', ['$scope', 'Chat', function($scope, chat) {
+  $scope.inputKey = function($event) {
+    if($event.which === 13) {
+      chat.submit($scope.input);
+      $scope.input = "";
+    }
+  };
 }])
 ;

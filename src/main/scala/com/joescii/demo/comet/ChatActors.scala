@@ -12,7 +12,7 @@ object ChatServer extends LiftActor with ListenerManager {
 
   override def lowPriority = {
     case msg:String => {
-      msgs = (msgs :+ msg) takeRight 10
+      msgs = (msgs :+ msg).distinct takeRight 10
       updateListeners(ChatMessages(msgs))
     }
   }

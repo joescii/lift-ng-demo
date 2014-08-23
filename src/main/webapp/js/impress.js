@@ -360,6 +360,11 @@
         document.querySelector(".hint").innerHTML = "<p>Tap on the left or right to navigate</p>";
       }
 
+      if (window.location.hostname === "localhost") {
+        var elem = document.querySelector(".hint");
+        elem.parentNode.removeChild(elem);
+      }
+
       // First we set up the viewport for mobile devices.
       // For some reason iPad goes nuts when it is not done properly.
       var meta = $("meta[name='viewport']") || document.createElement("meta");

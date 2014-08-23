@@ -802,7 +802,7 @@
     document.addEventListener("touchstart", function (event) {
       if (event.touches.length === 1) {
         var x = event.touches[0].clientX,
-          width = window.innerWidth * 0.3,
+          width = window.innerWidth * 0.1,
           result = null;
 
         if (x < width) {

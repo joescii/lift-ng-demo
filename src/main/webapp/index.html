@@ -145,6 +145,15 @@
     right around the corner of this tag ;)
     
 -->
+<div class="hint">
+  <p>Use Page Up/Page Down to navigate</p>
+</div>
+<script>
+  if ("ontouchstart" in document.documentElement) {
+    document.querySelector(".hint").innerHTML = "<p>Tap on the left or right to navigate</p>";
+  }
+</script>
+
 <div id="impress">
 
   <div id="lift" class="visible" data-x="-2400" data-z="350" data-y="-200">
@@ -253,7 +262,6 @@
   <div id="chat" class="step app slide" data-x="-2000" data-y="750" data-z="3500">
     <div data-lift="embed?what=/templates-hidden/chat"></div>
   </div>
-
 
 
   <!--
@@ -445,14 +453,6 @@
     <!--Just sayin' ;)-->
     <!---->
 <!---->-->
-<!--<div class="hint">-->
-    <!--<p>Use a spacebar or arrow keys to navigate</p>-->
-<!--</div>-->
-<!--<script>-->
-<!--if ("ontouchstart" in document.documentElement) { -->
-    <!--document.querySelector(".hint").innerHTML = "<p>Tap on the left or right to navigate</p>";-->
-<!--}-->
-<!--</script>-->
 </div>
 <!--
     

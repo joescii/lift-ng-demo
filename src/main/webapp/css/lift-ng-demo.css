@@ -664,7 +664,7 @@ a:focus {
 /*
     ... and we will show it when the first step (with id 'bored') is active.
 */
-.impress-on-bored .hint {
+.impress-on-title .hint {
     /*
         We remove the transparency and position the hint in its default fixed
         position.

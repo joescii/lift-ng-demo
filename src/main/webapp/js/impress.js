@@ -355,6 +355,11 @@
         return;
       }
 
+      // Customize the hint for touch devices.
+      if ("ontouchstart" in document.documentElement) {
+        document.querySelector(".hint").innerHTML = "<p>Tap on the left or right to navigate</p>";
+      }
+
       // First we set up the viewport for mobile devices.
       // For some reason iPad goes nuts when it is not done properly.
       var meta = $("meta[name='viewport']") || document.createElement("meta");
@@ -669,7 +674,6 @@
 
   // flag that can be used in JS to check if browser have passed the support test
   impress.supported = impressSupported;
-
 })(document, window);
 
 // NAVIGATION EVENTS
@@ -815,7 +819,6 @@
     }, 250), false);
 
   }, false);
-
 })(document, window);
 
 // THAT'S ALL FOLKS!

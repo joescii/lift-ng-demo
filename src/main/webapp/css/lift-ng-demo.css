@@ -755,6 +755,12 @@ a:focus {
   text-align: center;
 }
 
+#title .follow {
+  margin-top: 60px;
+  font-size: 45px;
+  text-align: left;
+}
+
 #joe-barnes .name {
   width: 350px;
   float: left;

@@ -801,6 +801,14 @@ a:focus {
   height: 93px;
 }
 
+#chat-design {
+  background-image: url('/images/ChatAppDesign.png');
+  background-repeat: no-repeat;
+  background-position: center;
+  height: 5282px;
+  width: 3382px;
+}
+
 #chat {
   position: relative;
 }

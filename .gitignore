@@ -7,3 +7,4 @@ project/target
 project/project
 .idea/
 *.log
+*.~vsdx

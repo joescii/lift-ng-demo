@@ -1,14 +1,15 @@
 angular.module('DemoApp', ['LiftNgClock', 'ChatServices'])
 
 .factory('ClockService', ['$timeout', '$rootScope', function($timeout, $rootScope) {
-  next = function() {
+  var next = function() {
     $rootScope.$emit('tick', (new Date()).toTimeString());
     $timeout(function() { next() }, 1000);
   };
-  return {
-    start: function() { next(); },
+  var clock = {
+    start: next,
     time: function(){ return (new Date()).toTimeString(); }
   };
+  return clock;
 }])
 
 .controller('Iceberg', ['$scope', '$rootScope', 'ClockService', function($scope, $rootScope, clock) {

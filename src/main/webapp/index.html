@@ -216,20 +216,32 @@
     </ul>
   </div>
 
-  <div id="server-time" class="slide step app" data-x="-4500" data-z="300" data-y="-550" ng-app="ServerTimeApp">
+  <div id="server-time" class="slide step app" data-x="-6500" data-z="300" data-y="-550" ng-app="ServerTimeApp">
     <div data-lift="embed?what=/templates-hidden/server-time"></div>
   </div>
 
-  <div id="server-time-module" class="step" data-x="-4500" data-z="300" data-y="450">
+  <div id="server-time-html" class="step" data-x="-6500" data-z="-700" data-y="-550">
+    <div data-lift="Code?src=/templates-hidden/server-time.html"></div>
+  </div>
+
+  <div id="server-time-at-page-load" class="step" data-x="-5300" data-z="-700" data-y="-700">
+    <div data-lift="Code?src=/scala/net/liftmodules/ng/demo/snippet/ServerTime.scala&l=11-14"></div>
+  </div>
+
+  <div id="server-time-module" class="step" data-x="-4800" data-z="-700" data-y="0">
     <div data-lift="Code?src=/js/ServerTime.js&l=1-3"></div>
   </div>
 
-  <div id="server-time-controller" class="step" data-x="-4500" data-z="300" data-y="950">
+  <div id="server-time-controller" class="step" data-x="-4800" data-z="-700" data-y="500">
     <div data-lift="Code?src=/js/ServerTime.js&l=5-6"></div>
   </div>
 
-  <div id="server-time-fetch" class="step" data-x="-4500" data-z="300" data-y="1450">
+  <div id="server-time-fetch" class="step" data-x="-4800" data-z="-700" data-y="1000">
     <div data-lift="Code?src=/js/ServerTime.js&l=7-14"></div>
+  </div>
+
+  <div id="server-time-scala" class="step" data-x="-6300" data-z="-700" data-y="1000">
+    <div data-lift="Code?src=/scala/net/liftmodules/ng/demo/snippet/ServerTime.scala&l=15-19"></div>
   </div>
 
 </div>
@@ -286,7 +298,7 @@
     
 -->
 <script src="js/highlight.pack.js"></script>
-<script src="js/scala.min.js"></script>
+<!--<script src="js/scala.min.js"></script>-->
 <script id="jquery" src="/classpath/jquery.js" type="text/javascript"></script>
 <script src="js/impress.js"></script>
 <div data-lift="IfAudience">

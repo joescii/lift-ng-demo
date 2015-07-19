@@ -17,6 +17,8 @@ seq(webSettings :_*)
 
 unmanagedResourceDirectories in Test <+= (baseDirectory) { _ / "src/main/webapp" }
 
+(webappResources in Compile) <+= (sourceDirectory in Compile)
+
 scalacOptions ++= Seq("-deprecation", "-unchecked")
 
 liftVersion <<= liftVersion ?? "3.0-M4-1"

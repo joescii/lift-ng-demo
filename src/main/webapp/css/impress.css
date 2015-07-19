@@ -946,3 +946,16 @@ button:active {
     color: blue;
 }
 
+.hljs-title {
+    font-weight: bold;
+    color: darkblue;
+}
+
+.hljs-attribute {
+    font-weight: bold;
+    color: blue;
+}
+
+.hljs-value {
+    color: green;
+}

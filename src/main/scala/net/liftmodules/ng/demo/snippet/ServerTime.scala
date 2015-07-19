@@ -8,11 +8,13 @@ import net.liftweb.common.Full
 
 object ServerTime {
   private def dateFormat = DateFormat.getDateTimeInstance(DateFormat.FULL, DateFormat.FULL)
-  private def timestamp = dateFormat.format(new Date())
+  private def timestamp =
+    dateFormat.format(new Date())
 
   def atPageLoad = <span>{timestamp}</span>
 
-  def service = renderIfNotAlreadyDefined(angular.module("ServerTimeServices")
+  def service = renderIfNotAlreadyDefined(
+    angular.module("ServerTimeServices")
     .factory("ServerTimeService", jsObjFactory()
       .jsonCall("currentTime", Full(timestamp))
   ))

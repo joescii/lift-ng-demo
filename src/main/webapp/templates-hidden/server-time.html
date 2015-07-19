@@ -1,9 +1,12 @@
 <div ng-controller="ServerTimeController">
   <div class="title">Server Time</div>
-
-  <div>At page load: <span data-lift="ServerTime.atPageLoad">REPLACE ME</span></div>
-
-  <div>Last check: <span ng-bind="latest"></span></div>
-
+  <div>At page load:
+    <span data-lift="ServerTime.atPageLoad">
+      (span replaced at page load time)
+    </span>
+  </div>
+  <div>Last check:
+    <span ng-bind="latest"></span>
+  </div>
   <button ng-click="fetch()">Fetch</button>
 </div>

@@ -916,3 +916,33 @@ button:active {
     top:1px;
 }
 /* This button was generated using CSSButtonGenerator.com */
+
+
+.hljs {
+    font-family: monospace;
+}
+
+.hljs-keyword {
+    font-weight: bold;
+    color: blue;
+}
+
+.hljs-number {
+    color: purple;
+}
+
+.hljs-string {
+    font-style: italic;
+    color: green;
+}
+
+.hljs-comment {
+    font-style: italic;
+    color: lightgray;
+}
+
+.hljs-inheritance {
+    font-weight: bold;
+    color: blue;
+}
+

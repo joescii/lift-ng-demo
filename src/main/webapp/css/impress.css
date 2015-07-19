@@ -938,7 +938,7 @@ button:active {
 
 .hljs-comment {
     font-style: italic;
-    color: lightgray;
+    color: darkgray;
 }
 
 .hljs-inheritance {

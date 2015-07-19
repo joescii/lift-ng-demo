@@ -766,3 +766,92 @@ a:focus {
 #slide-controls .forward.enabled:active {
   background-position: -160px -52px;
 }
+
+.visible {
+    position: relative;
+    width: 900px;
+    padding: 40px;
+    margin: 20px auto;
+
+    -webkit-box-sizing: border-box;
+    -moz-box-sizing:    border-box;
+    -ms-box-sizing:     border-box;
+    -o-box-sizing:      border-box;
+    box-sizing:         border-box;
+
+    font-family: 'PT Serif', georgia, serif;
+    font-size: 48px;
+    line-height: 1.5;
+}
+
+#title {
+    padding: 0;
+}
+
+#title .try {
+    font-size: 64px;
+    position: absolute;
+    top: -0.5em;
+    left: 1.5em;
+
+    -webkit-transform: translateZ(20px);
+    -moz-transform:    translateZ(20px);
+    -ms-transform:     translateZ(20px);
+    -o-transform:      translateZ(20px);
+    transform:         translateZ(20px);
+}
+
+#title h1 {
+    font-size: 65px;
+    text-align: center;
+}
+
+#title .follow {
+    margin-top: 60px;
+    font-size: 45px;
+    text-align: left;
+}
+
+#joe-barnes .name {
+    width: 350px;
+    float: left;
+}
+
+#joe-barnes h1 {
+    font-weight: bold;
+    font-size: 40px;
+}
+
+#joe-barnes h2 {
+    font-size: 30px;
+}
+
+#joe-barnes ul {
+    width: 450px;
+    float: left;
+    font-size: 30px;
+}
+
+#lift {
+    background-image: url('/images/liftweb-logo-single-small2.png');
+    background-repeat: no-repeat;
+    background-position: center;
+}
+
+#angular {
+    background-image: url('/images/AngularJS-large.png');
+    background-repeat: no-repeat;
+    background-position: center;
+    height: 108px;
+}
+
+#scala {
+    background-image: url('/images/scala-logo.png');
+    background-repeat: no-repeat;
+    background-position: center;
+    height: 93px;
+}
+
+.step ol, ul {
+    font-size: 36px;
+}

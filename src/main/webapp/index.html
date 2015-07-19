@@ -93,6 +93,10 @@
     
     <link rel="shortcut icon" href="favicon.png" />
     <link rel="apple-touch-icon" href="apple-touch-icon.png" />
+    <script data-lift="AngularJS"></script>
+    <script data-lift="Angular"></script>
+    <script data-lift="Services.all"></script>
+    <script src="js/ServerTime.js"></script>
 </head>
 
 <!--
@@ -211,7 +215,11 @@
       <li>Mixes well with Lift</li>
     </ul>
   </div>
-  
+
+  <div id="server-time" class="slide step app" data-x="-4500" data-z="300" data-y="-550" ng-app="ServerTimeApp">
+    <div data-lift="embed?what=/templates-hidden/server-time"></div>
+  </div>
+
 </div>
 
 <div data-lift="IfAudience"><div data-lift="embed?what=slide-controls"></div></div>

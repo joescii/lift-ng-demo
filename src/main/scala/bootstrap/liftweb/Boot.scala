@@ -11,6 +11,7 @@ import Loc._
 import net.liftmodules.JQueryModule
 import net.liftweb.http.js.jquery._
 
+import net.liftmodules.ng.demo.rest.Downloads
 
 /**
  * A class that's instantiated early and run.  It allows the application
@@ -19,16 +20,13 @@ import net.liftweb.http.js.jquery._
 class Boot {
   def boot {
     // where to search snippet
-    LiftRules.addToPackages("com.joescii.demo")
+    LiftRules.addToPackages("net.liftmodules.ng.demo")
 
     // Build SiteMap
     val entries = List(
       Menu.i("Home") / "index", // the simple way to declare a menu
-
-      // more complex because this menu allows anything in the
-      // /static path to be visible
-      Menu(Loc("Static", Link(List("static"), true, "/static/index"), 
-	       "Static Content")))
+      Menu.i("Presenter Login") / "presenter"
+    )
 
     // set the sitemap.  Note if you don't want access control for
     // each page, just comment this line out.
@@ -54,7 +52,17 @@ class Boot {
     JQueryModule.InitParam.JQuery=JQueryModule.JQuery172
     JQueryModule.init()
 
-    net.liftmodules.ng.AngularJS.init()
-    net.liftmodules.ng.Angular.init()
+    LiftRules.earlyResponse.append { (req: Req) =>
+      if(Props.mode != Props.RunModes.Development &&
+         req.path.partPath.headOption == Some("presenter") &&
+         req.header("X-Forwarded-Proto") != Full("https")) {
+        val uriAndQuery = req.uri + (req.request.queryString.map(s => "?"+s) openOr "")
+        val uri = "https://%s%s".format(req.request.serverName, uriAndQuery)
+        Full(PermRedirectResponse(uri, req, req.cookies: _*))
+      }
+      else Empty
+    }
+
+    LiftRules.statelessDispatch.append(Downloads)
   }
 }

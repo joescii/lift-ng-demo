@@ -1,3 +1,4 @@
+console.devmode.log
 target/
 boot/
 lib_managed/
@@ -6,5 +7,3 @@ project/plugins/project/
 project/target
 project/project
 .idea/
-*.log
-*.~vsdx

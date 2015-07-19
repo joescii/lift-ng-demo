@@ -1,16 +1,16 @@
+import NativePackagerKeys._
+
 name := "lift-ng-demo"
 
-organization := "com.joescii"
+organization := "net.liftmodules"
 
 version := "0.0.1-SNAPSHOT"
 
-scalaVersion := "2.10.4"
+scalaVersion := "2.11.6"
 
 resolvers ++= Seq(
-  "snapshots"         at "http://oss.sonatype.org/content/repositories/snapshots",
-  "staging"           at "https://oss.sonatype.org/service/local/staging/deploy/maven2",
-  "releases"          at "http://oss.sonatype.org/content/repositories/releases",
-  "CB Central Mirror" at "http://repo.cloudbees.com/content/groups/public"  // Location of Lift SNAPSHOT builds
+  "snapshots"         at "https://oss.sonatype.org/content/repositories/snapshots",
+  "releases"          at "https://oss.sonatype.org/content/repositories/releases"
 )
 
 seq(webSettings :_*)
@@ -19,34 +19,29 @@ unmanagedResourceDirectories in Test <+= (baseDirectory) { _ / "src/main/webapp"
 
 scalacOptions ++= Seq("-deprecation", "-unchecked")
 
+liftVersion <<= liftVersion ?? "3.0-M4-1"
+
 libraryDependencies ++= {
-  val liftVersion = "2.6-RC1"
-  val liftEdition = liftVersion.substring(0,3)
+  val lv = liftVersion.value
+  val le = liftEdition.value
   Seq(
-    "net.liftweb"             %% "lift-webkit"                        % liftVersion           % "compile",
-    "net.liftmodules"         %% ("lift-jquery-module_"+liftEdition)  % "2.5",
-    "net.liftmodules"         %% ("ng-js_"+liftEdition)               % "0.1_1.2.22"          % "compile",
-    "net.liftmodules"         %% ("ng_"+liftEdition)                  % "0.5.3"               % "compile",
-    "org.eclipse.jetty"       % "jetty-webapp"                        % "8.1.7.v20120910"     % "container,test",
-    "org.eclipse.jetty.orbit" % "javax.servlet"                       % "3.0.0.v201112011016" % "container,test" artifacts Artifact("javax.servlet", "jar", "jar"),
-    "ch.qos.logback"          % "logback-classic"                     % "1.0.6",
-    "org.specs2"              %% "specs2"                             % "1.14"                % "test"
+    "net.liftweb"             %% "lift-webkit"              % lv                    % "compile",
+    "net.liftmodules"         %% ("lift-jquery-module_"+le) % "2.9-SNAPSHOT"        % "compile", // https://github.com/karma4u101/lift-jquery-module
+    "org.eclipse.jetty"       % "jetty-webapp"              % "9.2.7.v20150116"     % "compile",
+    "org.eclipse.jetty"       % "jetty-plus"                % "9.2.7.v20150116"     % "container,test", // For Jetty Config
+    "org.eclipse.jetty.orbit" % "javax.servlet" % "3.0.0.v201112011016" % "container,test" artifacts Artifact("javax.servlet", "jar", "jar"),
+    "ch.qos.logback"          % "logback-classic"           % "1.0.6"               % "runtime",
+    "org.scalatest"           %% "scalatest"                % "2.2.4"               % "test->*",
+    "org.seleniumhq.selenium" %  "selenium-java"            % "2.46.0"              % "test"
   )
 }
 
-// Jasmine stuff
-seq(jasmineSettings : _*)
+packageArchetype.java_application
 
-appJsDir <+= sourceDirectory { src => src / "main" / "webapp" / "js" }
+bashScriptConfigLocation := Some("${app_home}/../conf/jvmopts")
 
-appJsLibDir <+= sourceDirectory { src => src / "test" / "js" / "3rdlib" }
+initialize~= { _ =>
+  System.setProperty("webdriver.chrome.driver", "src/test/drivers/chromedriver.exe")
+}
 
-jasmineTestDir <+= sourceDirectory { src => src /  "test" / "js" }
-
-jasmineConfFile <+= sourceDirectory { src => src / "test" / "js" / "3rdlib" / "test.dependencies.js" }
-
-jasmineRequireJsFile <+= sourceDirectory { src => src / "test" / "js" / "3rdlib" / "require" / "require-2.0.6.js" }
-
-jasmineRequireConfFile <+= sourceDirectory { src => src / "test" / "js" / "3rdlib" / "require.conf.js" }
-
-(Keys.test in Test) <<= (Keys.test in Test) dependsOn (jasmine)
+(Keys.test in Test) <<= (Keys.test in Test) dependsOn (start in container.Configuration)

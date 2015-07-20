@@ -960,3 +960,10 @@ button:active {
 .hljs-value {
     color: green;
 }
+
+input[type="text"] {
+    width: 84%;
+    height: 50px;
+    font-size: larger;
+    margin: 7px;
+}

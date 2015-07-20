@@ -96,7 +96,9 @@
     <script data-lift="AngularJS"></script>
     <script data-lift="Angular"></script>
     <script data-lift="Services.all"></script>
-    <script src="js/ServerTime.js"></script>
+    <script src="js/lift-ng-demo.js"></script>
+    <script src="js/server-time.js"></script>
+    <script src="js/user-signup.js"></script>
 </head>
 
 <!--
@@ -149,7 +151,7 @@
     
 -->
 
-<div id="impress">
+<div id="impress" ng-app="LiftNgDemo">
   <div id="lift" class="visible" data-x="-2400" data-z="350" data-y="-200">
   </div>
   <div id="angular" class="visible" data-x="-1675" data-z="300" data-y="-200">
@@ -216,7 +218,8 @@
     </ul>
   </div>
 
-  <div id="server-time" class="slide step app" data-x="-6500" data-z="-1700" data-y="-550" ng-app="ServerTimeApp">
+  <!-- ServerTime -->
+  <div id="server-time" class="slide step app" data-x="-6500" data-z="-1700" data-y="-550">
     <div data-lift="embed?what=/templates-hidden/server-time"></div>
   </div>
 
@@ -229,20 +232,30 @@
   </div>
 
   <div id="server-time-module" class="step" data-x="-4800" data-z="-700" data-y="0">
-    <div data-lift="Code?src=/js/ServerTime.js&l=1-3"></div>
+    <div data-lift="Code?src=/js/server-time.js&l=1-3"></div>
   </div>
 
   <div id="server-time-controller" class="step" data-x="-4800" data-z="-700" data-y="500">
-    <div data-lift="Code?src=/js/ServerTime.js&l=5-6"></div>
+    <div data-lift="Code?src=/js/server-time.js&l=5-6"></div>
   </div>
 
   <div id="server-time-fetch" class="step" data-x="-4800" data-z="-700" data-y="1000">
-    <div data-lift="Code?src=/js/ServerTime.js&l=7-15"></div>
+    <div data-lift="Code?src=/js/server-time.js&l=7-15"></div>
   </div>
 
   <div id="server-time-scala" class="step" data-x="-6300" data-z="-700" data-y="1000">
     <div data-lift="Code?src=/scala/net/liftmodules/ng/demo/snippet/ServerTime.scala&l=16-21"></div>
   </div>
+
+  <!-- User -->
+  <div id="user-signup" class="slide step app" data-x="-6500" data-z="-1700" data-y="2000">
+    <div data-lift="embed?what=/templates-hidden/user-signup"></div>
+  </div>
+
+  <div id="user-profile" class="slide step app" data-x="-5500" data-z="-1700" data-y="2000">
+    <div data-lift="embed?what=/templates-hidden/user-profile"></div>
+  </div>
+
 </div>
 
 <div data-lift="IfAudience"><div data-lift="embed?what=slide-controls"></div></div>

@@ -5,9 +5,10 @@ angular.module("ServerTimeApp",
 .controller("ServerTimeController",
   ["$scope", "ServerTimeService",
     function($scope, service) {
+      // ng-click for our button:
       $scope.fetch = function() {
-        service.currentTime().then(
-          function(timestamp) {
+        service.currentTime() // promise from server
+          .then(function(timestamp) {
             $scope.latest = timestamp;
           }
         );

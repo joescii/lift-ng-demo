@@ -920,6 +920,7 @@ button:active {
 
 .hljs {
     font-family: monospace;
+    font-size: 40px;
 }
 
 .hljs-keyword {

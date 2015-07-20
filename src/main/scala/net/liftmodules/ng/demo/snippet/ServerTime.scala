@@ -13,6 +13,7 @@ object ServerTime {
 
   def atPageLoad = <span>{timestamp}</span>
 
+  // lift-ng magic!!
   def service = renderIfNotAlreadyDefined(
     angular.module("ServerTimeServices")
     .factory("ServerTimeService", jsObjFactory()

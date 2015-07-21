@@ -32,6 +32,7 @@ libraryDependencies ++= {
     "net.liftmodules"         %% ("lift-jquery-module_"+le) % "2.9-SNAPSHOT"        % "compile", // https://github.com/karma4u101/lift-jquery-module
     "net.liftmodules"         %% ("ng_"+le)                 % "0.6.4"               % "compile",
     "net.liftmodules"         %% ("ng-js_"+le)              % ("0.2_"+ngVersion)    % "compile",
+    "net.databinder.dispatch" %% "dispatch-core"            % "0.11.2"              % "compile",
     "org.eclipse.jetty"       %  "jetty-webapp"             % "9.2.7.v20150116"     % "compile",
     "org.eclipse.jetty"       %  "jetty-plus"               % "9.2.7.v20150116"     % "container,test", // For Jetty Config
     "org.eclipse.jetty.orbit" %  "javax.servlet"            % "3.0.0.v201112011016" % "container,test" artifacts Artifact("javax.servlet", "jar", "jar"),

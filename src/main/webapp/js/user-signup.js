@@ -7,5 +7,9 @@ angular.module("UserSignupApp",
       $scope.submit = function() {
         service.signup($scope.github);
       };
+
+      $scope.onKeypress = function(e) {
+        if(e.keyCode === 13) $scope.submit();
+      }
 }])
 ;

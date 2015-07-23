@@ -10,6 +10,7 @@ angular.module("OssScoreApp",
         $scope.id = "";
         $scope.avatar = "";
         $scope.followers = "";
+        $scope.repos = "";
         $scope.stars = "";
         $scope.forks = "";
         $scope.total = "";
@@ -18,6 +19,7 @@ angular.module("OssScoreApp",
           $scope.id = profile.id;
           profile.avatar.then(function(avatar){ $scope.avatar = avatar });
           profile.followers.then(function(count){ $scope.followers = count });
+          profile.repos.then(function(count){ $scope.repos = count });
           profile.stars.then(function(count){ $scope.stars = count });
           profile.forks.then(function(count){ $scope.forks = count });
 

@@ -1,10 +1,11 @@
 <div ng-controller="OssScoreController">
-  <div class="title">Enter your GitHub ID:</div>
+  <div class="title">Enter a GitHub ID:</div>
   <input type="text" placeholder="github_id" ng-model="enteredId" ng-keypress="onKeypress($event)">
 
   <div class="avatar" ng-style="{'background-image': 'url('+avatar+')'}"></div>
   <div>Screen name: <span ng-bind="id"></span></div>
   <div>Followers: <span ng-bind="followers"></span></div>
+  <div>Repos: <span ng-bind="repos"></span></div>
   <div>Stars: <span ng-bind="stars"></span></div>
   <div>Forks: <span ng-bind="forks"></span></div>
   <div>Total: <span ng-bind="total"></span></div>

@@ -11,10 +11,11 @@ import FutureHelpers._
 object GitHub {
   def accountFor(id:String):GitHub = {
     val json = Http(url(s"https://api.github.com/users/$id") OK as.String).flatMap(str => Json parse str)
-    val avatar:Future[String] = json.flatMap(_.avatar_url.as[String])
+    val avatar = json.flatMap(_.avatar_url.as[String])
+    val followers = json.flatMap(_.followers.as[Int])
 
-    GitHub(id, avatar)
+    GitHub(id, avatar, followers)
   }
 }
 
-case class GitHub(id:String, avatar:Future[String])
+case class GitHub(id:String, avatar:Future[String], followers:Future[Int])

@@ -8,6 +8,7 @@ angular.module("UserProfileApp",
         service.profile().then(function(profile){
           $scope.github = { id: profile.github.id };
           profile.github.avatar.then(function(avatar){ $scope.github.avatar = avatar });
+          profile.github.followers.then(function(count){ $scope.github.followers = count });
         });
       };
     }

@@ -13,14 +13,15 @@ object Code {
     name <- S.attr("src")
     code <- LiftRules.loadResourceAsString(name)
   } yield {
-    firstLine.map { first =>
+    val lines = code.split("(?s)\r?\n").toList
+    val range = firstLine.map { first =>
       val last = lastLine.getOrElse(first)
-      val lines = code.split("(?s)\r?\n")
       lines
         .drop(first - 1)
         .take(last - first + 1)
-        .mkString(newline)
-    }.getOrElse(code)
+    }.getOrElse(lines)
+    val trimmed = trimIndentation(range)
+    trimmed.mkString(newline)
   }).openOr("// Source not found!!!")
 
   private def lang = S.attr("src").map(_.split("\\.").last match {
@@ -40,4 +41,17 @@ object Code {
         <div>{src}</div>
       </code>
     </pre>
+
+  private val CodeRegex = """(\s*).*?""".r
+  private def spaces(line:String):Int = {
+    val CodeRegex(whitespaces) = line
+    whitespaces.foldLeft(0) {
+      case (acc, ' ')  => acc + 1
+      case (acc, '\t') => acc + 2
+    }
+  }
+  private def trimIndentation(code:List[String]):List[String] = {
+    val min = (code map spaces).min
+    code.map(_.substring(min))
+  }
 }

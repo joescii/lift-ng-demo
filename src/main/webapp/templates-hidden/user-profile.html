@@ -1,8 +1,0 @@
-<div ng-controller="UserProfileController">
-  <div>GitHub</div>
-  <div ng-bind="github.id"></div>
-  <div class="avatar" ng-style="{'background-image': 'url('+github.avatar+')'}"></div>
-  <div>Followers: <span ng-bind="github.followers"></span></div>
-  <div>Stars: <span ng-bind="github.stars"></span></div>
-  <button ng-click="fetch()">Load</button>
-</div>

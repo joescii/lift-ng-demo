@@ -856,7 +856,7 @@ a:focus {
     font-size: 36px;
 }
 
-.app div {
+#server-time div {
   margin-bottom: 50px;
 }
 

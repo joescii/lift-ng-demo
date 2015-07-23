@@ -9,7 +9,7 @@ import net.liftweb.http.SessionVar
 import scala.concurrent.Future
 
 case class User(twitter:String, github:String) extends NgModel
-case class UserProfile(github:Future[GitHub])
+case class UserProfile(github:GitHub)
 
 object UserVar extends SessionVar[Option[User]](None)
 

@@ -6,7 +6,8 @@ angular.module("UserProfileApp",
     function($scope, service) {
       $scope.fetch = function() {
         service.profile().then(function(profile){
-          profile.github.then(function(github){ $scope.github = github })
+          $scope.github = { id: profile.github.id };
+          profile.github.avatar.then(function(avatar){ $scope.github.avatar = avatar });
         });
       };
     }

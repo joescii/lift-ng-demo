@@ -1,17 +1,19 @@
 package net.liftmodules.ng.demo
 package snippet
 
+import lib._
+
 import net.liftmodules.ng.Angular. {renderIfNotAlreadyDefined, angular, jsObjFactory }
 import net.liftweb.common.{ Full }
 
-//import scala.concurrent.ExecutionContext.Implicits.global
-import scala.concurrent.Future
-
-object GitHub {
+object GitHubSvc {
   def service = renderIfNotAlreadyDefined(
     angular.module("GitHubServices")
       .factory("GitHubService", jsObjFactory()
-        .jsonCall("get", (github:String) => Full(lib.GitHub.accountFor(github)) )
+        .jsonCall("get", (github:String) => {
+          val gh:GitHub = GitHub.accountFor(github)
+          Full(gh)
+        })
       )
-  )
+    )
 }

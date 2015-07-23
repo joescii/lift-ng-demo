@@ -1,6 +1,7 @@
 <div ng-controller="OssScoreController">
   <div class="title">Enter a GitHub ID:</div>
-  <input type="text" placeholder="github_id" ng-model="enteredId" ng-keypress="onKeypress($event)">
+  <input type="text" placeholder="github_id"
+         ng-model="enteredId" ng-keypress="onKeypress($event)">
 
   <div class="avatar" ng-style="{'background-image': 'url('+avatar+')'}"></div>
   <div>Screen name: <span ng-bind="id"></span></div>

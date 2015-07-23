@@ -5,10 +5,7 @@ angular.module("UserSignupApp",
   ["$scope", "UserService",
     function($scope, service){
       $scope.submit = function() {
-        service.signup({
-          twitter: $scope.twitter,
-          github:  $scope.github
-        });
+        service.signup($scope.github);
       };
 }])
 ;

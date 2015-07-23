@@ -10,12 +10,23 @@ import FutureHelpers._
 
 object GitHub {
   def accountFor(id:String):GitHub = {
-    val json = Http(url(s"https://api.github.com/users/$id") OK as.String).flatMap(str => Json parse str)
-    val avatar = json.flatMap(_.avatar_url.as[String])
-    val followers = json.flatMap(_.followers.as[Int])
+    val user = Http(url(s"https://api.github.com/users/$id") OK as.String).flatMap(str => Json parse str)
+    val avatar = user.flatMap(_.avatar_url.as[String])
+    val followers = user.flatMap(_.followers.as[Int])
 
-    GitHub(id, avatar, followers)
+    val repos:Future[List[Json]] = for {
+      json <- user
+      reposUrl <- tryToFuture(json.repos_url.as[String])
+      response <- Http(url(reposUrl) OK as.String)
+      reposJson <- Json.parse(response)
+      repos <- reposJson.as[List[Json]]
+    } yield { repos }
+    val stars = repos.map(_.foldLeft(0){ case (acc, repo) =>
+      repo.stargazers_count.as[Int].toOption.getOrElse(0) + acc
+    })
+
+    GitHub(id, avatar, followers, stars)
   }
 }
 
-case class GitHub(id:String, avatar:Future[String], followers:Future[Int])
+case class GitHub(id:String, avatar:Future[String], followers:Future[Int], stars:Future[Int])

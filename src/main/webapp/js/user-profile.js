@@ -9,6 +9,7 @@ angular.module("UserProfileApp",
           $scope.github = { id: profile.github.id };
           profile.github.avatar.then(function(avatar){ $scope.github.avatar = avatar });
           profile.github.followers.then(function(count){ $scope.github.followers = count });
+          profile.github.stars.then(function(count){ $scope.github.stars = count });
         });
       };
     }

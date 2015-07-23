@@ -24,9 +24,12 @@ object GitHub {
     val stars = repos.map(_.foldLeft(0){ case (acc, repo) =>
       repo.stargazers_count.as[Int].toOption.getOrElse(0) + acc
     })
+    val forks = repos.map(_.foldLeft(0){ case (acc, repo) =>
+      repo.forks.as[Int].toOption.getOrElse(0) + acc
+    })
 
-    GitHub(id, avatar, followers, stars)
+    GitHub(id, avatar, followers, stars, forks)
   }
 }
 
-case class GitHub(id:String, avatar:Future[String], followers:Future[Int], stars:Future[Int])
+case class GitHub(id:String, avatar:Future[String], followers:Future[Int], stars:Future[Int], forks:Future[Int])

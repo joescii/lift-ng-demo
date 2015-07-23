@@ -1,3 +1,5 @@
 <div ng-controller="UserProfileController">
-  <div>Your name:<span ng-bind="name"></span></div>
+  <div>GitHub</div>
+  <div><span ng-bind="github.id"></span><div class="avatar" ng-style="{'background-image': 'url('+github.avatar+')'}"></div></div>
+  <button ng-click="fetch()">Load</button>
 </div>

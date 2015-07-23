@@ -1,4 +1,4 @@
 angular.module("LiftNgDemo",
-  ["UserSignupApp", "ServerTimeApp"]
+  ["ServerTimeApp", "UserSignupApp", "UserProfileApp"]
 )
 ;

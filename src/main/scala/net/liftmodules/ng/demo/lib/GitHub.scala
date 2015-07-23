@@ -13,6 +13,7 @@ object GitHub {
     Http(url(s"https://api.github.com/users/$id") OK as.String).flatMap { str =>
       Json.parse(str).map { json =>
         GitHub(
+          id,
           json.avatar_url.as[String].toOption
         )
       }
@@ -20,4 +21,4 @@ object GitHub {
   }
 }
 
-case class GitHub(avatar:Option[String])
+case class GitHub(id:String, avatar:Option[String])

@@ -1,7 +1,8 @@
 <div ng-controller="ChatController">
   <div data-lift="comet?type=ChatComet"></div>
   <ul id="chat-out">
-    <li ng-repeat="m in messages track by $index" ng-bind="m"></li>
+    <li ng-repeat="m in messages track by $index"
+        ng-bind="m"></li>
   </ul>
   <div id="chat-in">
     <button ng-click="sendChat()">Send</button>

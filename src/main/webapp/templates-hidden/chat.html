@@ -1,0 +1,11 @@
+<div ng-controller="ChatController">
+  <div data-lift="comet?type=ChatComet"></div>
+  <ul id="chat-out">
+    <li ng-repeat="m in messages track by $index" ng-bind="m"></li>
+  </ul>
+  <div id="chat-in">
+    <button ng-click="sendChat()">Send</button>
+    <input type="text" placeholder="Send us a message"
+           ng-model="message" ng-keypress="onKeypress($event)">
+  </div>
+</div>

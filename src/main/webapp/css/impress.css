@@ -856,10 +856,6 @@ a:focus {
     font-size: 36px;
 }
 
-#server-time div {
-  margin-bottom: 50px;
-}
-
 .app .title {
   font-weight: bolder;
 }
@@ -972,4 +968,23 @@ input[type="text"] {
     width: 50px;
     height: 50px;
     background-size: 50px 50px;
+}
+
+#server-time div {
+    margin-bottom: 50px;
+}
+
+#chat-in {
+    position: absolute;
+    bottom: 25px;
+}
+
+#chat-in button {
+    float: right;
+    width: 25%;
+}
+
+#chat-in input {
+    float: left;
+    width: 68%;
 }

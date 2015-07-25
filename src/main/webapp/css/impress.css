@@ -988,3 +988,18 @@ input[type="text"] {
     float: left;
     width: 68%;
 }
+
+#editor textarea {
+    position: absolute;
+    bottom: 25px;
+    width: 85%;
+    height: 200px;
+}
+
+#editor .document ul {
+    list-style: circle;
+}
+#editor .document ol {
+    list-style: upper-roman;
+}
+

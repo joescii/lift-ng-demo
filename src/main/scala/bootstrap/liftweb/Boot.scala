@@ -66,6 +66,6 @@ class Boot {
     LiftRules.statelessDispatch.append(Downloads)
 
     net.liftmodules.ng.Angular.init()
-    net.liftmodules.ng.AngularJS.init()
+    net.liftmodules.ng.AngularJS.init("sanitize")
   }
 }

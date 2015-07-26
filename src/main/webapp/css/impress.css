@@ -1003,3 +1003,11 @@ input[type="text"] {
     list-style: upper-roman;
 }
 
+#lift-ng-overview ol {
+    list-style: decimal;
+    margin-left: 47px;
+}
+
+#lift-ng-overview code {
+    font-family: monospace;
+}

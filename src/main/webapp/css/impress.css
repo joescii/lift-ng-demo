@@ -970,7 +970,11 @@ input[type="text"] {
     background-size: 50px 50px;
 }
 
-#server-time div {
+#time .timestamp {
+    margin-bottom: 50px;
+    font-style: italic;
+}
+#time button {
     margin-bottom: 50px;
 }
 

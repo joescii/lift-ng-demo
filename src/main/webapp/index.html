@@ -95,9 +95,11 @@
     <link rel="apple-touch-icon" href="apple-touch-icon.png" />
     <script data-lift="AngularJS"></script>
     <script data-lift="Angular"></script>
+    <script data-lift="ServerTime.service"></script>
     <script data-lift="Services.all"></script>
     <script src="js/lift-ng-demo.js"></script>
-    <script src="js/server-time.js"></script>
+    <script src="js/time-factory.js"></script>
+    <script src="js/time.js"></script>
     <script src="js/oss-score.js"></script>
     <script src="js/chat.js"></script>
     <script src="js/editor.js"></script>
@@ -235,45 +237,58 @@
     </ul>
   </div>
 
-  <!-- ServerTime -->
-  <div id="server-time-intro" class="step" data-x="-6500" data-z="-1700" data-y="-1500">
+  <!-- Time -->
+  <div id="time-intro" class="step" data-x="-6500" data-z="-1700" data-y="-1500">
     Server Time App
     <ul>
-      <li>Lift template manipulation</li>
-      <li>Angular template manipulation</li>
-      <li>Angular factory</li>
+      <li>Lift template basics</li>
+      <li>Angular template basics</li>
+      <li>JS Angular factory</li>
+      <li>lift-ng Angular factory</li>
     </ul>
   </div>
 
-  <div id="server-time" class="slide step app" data-x="-6500" data-z="-1700" data-y="-550">
-    <div data-lift="embed?what=/templates-hidden/server-time"></div>
+  <div id="time" class="slide step app" data-x="-6500" data-z="-1700" data-y="-550">
+    <div data-lift="embed?what=/templates-hidden/time"></div>
   </div>
 
-  <div id="server-time-html" class="step" data-x="-6500" data-z="-700" data-y="-550">
-    <div data-lift="Code?src=/templates-hidden/server-time.html"></div>
+  <div id="time-html" class="step" data-x="-6500" data-z="-700" data-y="-550">
+    <div data-lift="Code?src=/templates-hidden/time.html"></div>
   </div>
 
-  <div id="server-time-at-page-load" class="step" data-x="-5300" data-z="-700" data-y="-700">
-    <div data-lift="Code?src=/scala/net/liftmodules/ng/demo/snippet/ServerTime.scala&l=11-14"></div>
+  <div id="time-at-page-load" class="step" data-x="-4800" data-z="-700" data-y="-700">
+    <div data-lift="Code?src=/scala/net/liftmodules/ng/demo/snippet/ServerTime.scala&l=13-19"></div>
   </div>
 
-  <div id="server-time-module" class="step" data-x="-4800" data-z="-700" data-y="0">
-    <div data-lift="Code?src=/js/server-time.js&l=1-3"></div>
+  <div id="time-module" class="step" data-x="-4800" data-z="-700" data-y="0">
+    <div data-lift="Code?src=/js/time.js&l=1-4"></div>
   </div>
 
-  <div id="server-time-controller" class="step" data-x="-4800" data-z="-700" data-y="500">
-    <div data-lift="Code?src=/js/server-time.js&l=5-6"></div>
+  <div id="time-def-controller" class="step" data-x="-4800" data-z="-700" data-y="400">
+    <div data-lift="Code?src=/js/time.js&l=6-9"></div>
   </div>
 
-  <div id="server-time-fetch" class="step" data-x="-4800" data-z="-700" data-y="1000">
-    <div data-lift="Code?src=/js/server-time.js&l=7-15"></div>
+  <div id="time-controller-client" class="step" data-x="-4800" data-z="-700" data-y="1000">
+    <div data-lift="Code?src=/js/time.js&l=10-18"></div>
   </div>
 
-  <div id="server-time-scala" class="step" data-x="-6300" data-z="-700" data-y="500">
-    <div data-lift="Code?src=/scala/net/liftmodules/ng/demo/snippet/ServerTime.scala&l=16-21"></div>
+  <div id="time-factory-client" class="step" data-x="-3300" data-z="-700" data-y="1000">
+    <div data-lift="Code?src=/js/time-factory.js"></div>
   </div>
 
-  <div id="server-time-source" class="step" data-x="-6300" data-z="-700" data-y="1000">
+  <div id="time-controller-server" class="step" data-x="-3300" data-z="-700" data-y="300">
+    <div data-lift="Code?src=/js/time.js&l=19-25"></div>
+  </div>
+
+  <div id="time-scala" class="step" data-x="-6300" data-z="-700" data-y="300">
+    <div data-lift="Code?src=/scala/net/liftmodules/ng/demo/snippet/ServerTime.scala&l=21-26"></div>
+  </div>
+
+  <div id="time-script-html" class="step" data-x="-6300" data-z="-700" data-y="650">
+    <div data-lift="Code?src=/index.html&l=98"></div>
+  </div>
+
+  <div id="time-source" class="step" data-x="-6300" data-z="-700" data-y="1000">
     View the source to see the generated angular service
   </div>
 

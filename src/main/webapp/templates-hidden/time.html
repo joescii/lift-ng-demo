@@ -1,0 +1,13 @@
+<div ng-controller="TimeController">
+  <div class="title">Time</div>
+  <div>Server time at page load:</div>
+  <div data-lift="ServerTime.atPageLoad">
+    (span replaced at page load time)
+  </div>
+  <div>Client time:</div>
+  <div class="timestamp" ng-bind="client"></div>
+  <button ng-click="getClient()">Client</button>
+  <div>Server time:</div>
+  <div class="timestamp" ng-bind="server"></div>
+  <button ng-click="getServer()">Server</button>
+</div>

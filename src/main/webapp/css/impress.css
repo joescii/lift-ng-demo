@@ -1011,3 +1011,12 @@ input[type="text"] {
 #lift-ng-overview code {
     font-family: monospace;
 }
+
+#chat-intro code {
+    font-family: monospace;
+}
+
+#oss-score-intro code {
+    font-family: monospace;
+}
+

@@ -11,7 +11,7 @@ class ScreenShots extends FlatSpec with Chrome {
     webDriver.manage().window().maximize()
     setCaptureDir("target/screenshots")
 
-    val lastStepId = "overview" // TODO: Update to be the ID of your last step
+    val lastStepId = "thank-you" // TODO: Update to be the ID of your last step
     def waitForAnimation(millis:Int) = Thread sleep millis
     def captureStep(i:Int) = capture to (i.toString)
     def advance() = new Actions(webDriver).sendKeys(Keys.PAGE_DOWN).perform()

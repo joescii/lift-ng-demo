@@ -406,6 +406,49 @@
   </div>
 
 
+  <div id="available-now" class="step" data-x="-11000" data-z="1500" data-y="3000" data-rotate-x="-45">
+    All of this is available now (0.6.4)
+  </div>
+
+  <div id="partquest" class="step" data-x="-11000" data-z="1500" data-y="4000" data-rotate-x="-45">
+    Running in production at <a href="http://partquest.com">http://partquest.com</a>
+  </div>
+
+  <div id="improvements" class="step" data-x="-11000" data-z="1500" data-y="5000" data-rotate-x="-45">
+    Improvements are on the way
+  </div>
+
+
+  <div id="dsl-improvements" class="step" data-x="-11000" data-z="0" data-y="5000">
+    <pre>
+      <code class="scala">
+        <div>
+angular.module("MyServices")
+  .factory("MyService", jsObjFactory()
+    .defs(callMe = (arg:String) => Service call arg)
+    .vals(aConst = "Evaluated at page-load!")
+  )
+        </div>
+      </code>
+    </pre>
+  </div>
+
+  <div id="push-factories" class="step" data-x="-11000" data-z="0" data-y="6000">
+    Currently can only push to a <code>$scope</code>.<br>
+    Find a way to tie a comet actor to a factory.
+  </div>
+
+  <div id="thank-you" class="step" data-x="-11000" data-z="0" data-y="7000">
+    <p>Thank you for your interest!</p>
+    <div>
+      <div><a href="/download">Download Slides</a></div>
+      <div><a href="https://github.com/joescii/lift-ng">lift-ng</a></div>
+      <div><a href="https://github.com/joescii/lift-ng.g8">giter8 Template</a></div>
+      <div><a href="https://github.com/joescii/lift-ng-demo">Presentation Source</a></div>
+    </div>
+  </div>
+
+
 </div>
 
 <div data-lift="IfAudience"><div data-lift="embed?what=slide-controls"></div></div>

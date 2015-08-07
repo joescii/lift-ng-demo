@@ -1024,3 +1024,6 @@ input[type="text"] {
     font-family: monospace;
 }
 
+#push-factories code {
+    font-family: monospace;
+}

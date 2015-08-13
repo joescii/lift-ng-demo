@@ -30,7 +30,7 @@ libraryDependencies ++= {
   Seq(
     "net.liftweb"             %% "lift-webkit"              % lv                    % "compile",
     "net.liftmodules"         %% ("lift-jquery-module_"+le) % "2.9"                 % "compile", // https://github.com/karma4u101/lift-jquery-module
-    "net.liftmodules"         %% ("ng_"+le)                 % "0.6.4"               % "compile",
+    "net.liftmodules"         %% ("ng_"+le)                 % "0.7.0"               % "compile",
     "net.liftmodules"         %% ("ng-js_"+le)              % ("0.2_"+ngVersion)    % "compile",
     "net.databinder.dispatch" %% "dispatch-core"            % "0.11.2"              % "compile",
     "com.propensive"          %% "rapture-json"             % "1.1.0"               % "compile",

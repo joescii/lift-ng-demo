@@ -1027,3 +1027,8 @@ input[type="text"] {
 #push-factories code {
     font-family: monospace;
 }
+
+.step img {
+    display:block;
+    margin:auto;
+}

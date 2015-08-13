@@ -34,7 +34,7 @@ libraryDependencies ++= {
     "net.liftmodules"         %% ("ng-js_"+le)              % ("0.2_"+ngVersion)    % "compile",
     "net.databinder.dispatch" %% "dispatch-core"            % "0.11.2"              % "compile",
     "com.propensive"          %% "rapture-json"             % "1.1.0"               % "compile",
-    "com.propensive"          %% "rapture-json-lift"        % "1.1.0"               % "compile",
+//    "com.propensive"          %% "rapture-json-lift"        % "1.1.0"               % "compile",
     "org.eclipse.jetty"       %  "jetty-webapp"             % "9.2.7.v20150116"     % "compile",
     "org.eclipse.jetty"       %  "jetty-plus"               % "9.2.7.v20150116"     % "container,test", // For Jetty Config
     "org.eclipse.jetty.orbit" %  "javax.servlet"            % "3.0.0.v201112011016" % "container,test" artifacts Artifact("javax.servlet", "jar", "jar"),

@@ -52,6 +52,23 @@ class Boot {
     JQueryModule.InitParam.JQuery=JQueryModule.JQuery172
     JQueryModule.init()
 
+    LiftRules.securityRules = () => {
+      SecurityRules(content = Some(ContentSecurityPolicy(
+        styleSources = List(
+          ContentSourceRestriction.UnsafeInline,
+          ContentSourceRestriction.All
+        ),
+        fontSources = List(
+          ContentSourceRestriction.All
+        ),
+        scriptSources = List(
+          ContentSourceRestriction.UnsafeEval,
+          ContentSourceRestriction.UnsafeInline,
+          ContentSourceRestriction.Self
+        )
+      )))
+    }
+
     LiftRules.earlyResponse.append { (req: Req) =>
       if(Props.mode != Props.RunModes.Development &&
          req.path.partPath.headOption == Some("presenter") &&

@@ -1,9 +1,9 @@
 angular.module("OssScoreApp",
-  ["GitHubServices"]
+  ["GitHubModule"]
 )
 .controller("OssScoreController",
-  ["$scope", "$q", "GitHubService",
-    function($scope, $q, service){
+  ["$scope", "$q", "GitHub",
+    function($scope, $q, github){
       $scope.enteredId = "";
 
       $scope.submit = function() {
@@ -15,7 +15,7 @@ angular.module("OssScoreApp",
         $scope.forks = "";
         $scope.total = "";
 
-        service.get($scope.enteredId).then(function(profile){
+        github.get($scope.enteredId).then(function(profile){
           $scope.id = profile.id;
           profile.avatar.then(function(avatar){
             $scope.avatar = avatar });

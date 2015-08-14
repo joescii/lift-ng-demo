@@ -8,8 +8,8 @@ import net.liftweb.common.{ Full }
 
 object GitHubSvc {
   def service = renderIfNotAlreadyDefined(
-    angular.module("GitHubServices")
-      .factory("GitHubService", jsObjFactory()
+    angular.module("GitHubModule")
+      .factory("GitHub", jsObjFactory()
         .jsonCall("get", (github:String) => {
           val gh:GitHub = GitHub.accountFor(github)
           Full(gh)

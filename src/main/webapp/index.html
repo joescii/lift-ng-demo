@@ -443,9 +443,9 @@
     <pre>
       <code class="scala">
         <div>
-angular.module("MyServices")
-  .factory("MyService", jsObjFactory()
-    .defs(callMe = (arg:String) => Service call arg)
+angular.module("MyModule")
+  .factory("MyFactory", jsObjFactory()
+    .defs(callServer = (arg:String) => Service call arg)
     .vals(aConst = "Evaluated at page-load!")
   )
         </div>

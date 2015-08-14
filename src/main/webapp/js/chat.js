@@ -1,6 +1,6 @@
-angular.module("ChatApp", ["ChatServices"])
+angular.module("ChatApp", ["ChatModule"])
 .controller("ChatController",
-  ["$scope", "ChatService",
+  ["$scope", "ChatServer",
     function($scope, service){
       $scope.messages = [];
       $scope.$on("new-message",

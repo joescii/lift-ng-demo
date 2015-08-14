@@ -6,8 +6,8 @@ import net.liftweb.common.Empty
 
 object Chat {
   def service = renderIfNotAlreadyDefined(
-    angular.module("ChatServices")
-    .factory("ChatService", jsObjFactory()
+    angular.module("ChatModule")
+    .factory("ChatServer", jsObjFactory()
       .jsonCall("send", (chat:String) => {
         ChatServer ! chat
         Empty

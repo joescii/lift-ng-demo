@@ -20,8 +20,8 @@ object ServerTime {
 
   // lift-ng magic!!
   def service = renderIfNotAlreadyDefined(
-    angular.module("ServerTimeServices")
-    .factory("ServerTimeService", jsObjFactory()
+    angular.module("ServerTimeModule")
+    .factory("ServerTime", jsObjFactory()
       .jsonCall("currentTime", Full(timestamp))
   ))
 }

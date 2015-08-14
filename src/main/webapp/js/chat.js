@@ -1,7 +1,7 @@
 angular.module("ChatApp", ["ChatModule"])
 .controller("ChatController",
   ["$scope", "ChatServer",
-    function($scope, service){
+    function($scope, server){
       $scope.messages = [];
       $scope.$on("new-message",
         function(e, msg){
@@ -10,7 +10,7 @@ angular.module("ChatApp", ["ChatModule"])
       );
 
       $scope.sendChat = function() {
-        service.send($scope.message);
+        server.send($scope.message);
         $scope.message = "";
       };
       $scope.onKeypress = function(e) {

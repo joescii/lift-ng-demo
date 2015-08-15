@@ -53,3 +53,6 @@ initialize~= { _ =>
 }
 
 (Keys.test in Test) <<= (Keys.test in Test) dependsOn (start in container.Configuration)
+
+// Trying to force a clean on my heroku build
+compile in Compile <<= compile in Compile dependsOn (clean in Compile)

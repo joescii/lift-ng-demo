@@ -426,6 +426,38 @@
   </div>
 
 
+  <div id="i18n-support" class="step" data-x="-11000" data-z="1500" data-y="0" data-rotate-x="-45">
+    Support for i18n
+  </div>
+
+  <div id="i18n-props" class="step" data-x="-11000" data-z="1500" data-y="1000" data-rotate-x="-45">
+    <pre>
+      <code>
+        <div>
+# my-bundle.properties
+hello=¡Hola!
+bye=Adios, {0}
+        </div>
+      </code>
+    </pre>
+  </div>
+
+  <div id="i18n-js" class="step" data-x="-11000" data-z="1500" data-y="2000" data-rotate-x="-45">
+    <pre>
+      <code class="javascript">
+        <div>
+angular.module('ExampleApp', ['i18n'])
+.controller('ExampleController',
+  ['$scope', 'my-bundle',
+    function($scope, i18n) {
+      $scope.hello = i18n.hello;
+      $scope.bye = i18n.bye($scope.username);
+}]);
+        </div>
+      </code>
+    </pre>
+  </div>
+
   <div id="available-now" class="step" data-x="-11000" data-z="1500" data-y="3000" data-rotate-x="-45">
     All of this is available now (0.7.0)
   </div>
